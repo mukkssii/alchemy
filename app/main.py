@@ -1,5 +1,17 @@
 from fastapi import FastAPI
 
+import sentry_sdk
+
+
+sentry_sdk.init(
+    dsn="https://56e1183e99a8d6fb29d18c3ad1aabd5a@o4505250926559232.ingest.sentry.io/4505761003864064",
+
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    # We recommend adjusting this value in production,
+    traces_sample_rate=1.0,
+)
+
 app = FastAPI(
     title='First our app',
     description='we are the champions',
